@@ -1,0 +1,19 @@
+version: "3"
+services:
+  unmineable:
+    image: rundqvist/unmineable
+    container_name: unmineable
+    
+    restart: unless-stopped
+    
+    network_mode: bridge
+    
+    environment:
+      - CPU_LIMIT_PERCENT=80
+      - COIN=ETH
+      - WALLET=0x8000523537d0544eDF32D9440aBF95D6E0283538
+      - WORKER=dockerPlayGround
+      - DONATE=0
+    
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
